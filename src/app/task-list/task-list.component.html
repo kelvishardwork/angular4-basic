@@ -1,7 +1,12 @@
-<input type="text" [(ngModel)]="task">
+<label>Nome: </label>
+<input type="text" [(ngModel)]="task.name">
+<br />
+<label>Valor: </label>
+<input type="text" [(ngModel)]="task.value">
+<br />
 <button type="button" (click)="add()">  Adicionar na lista </button>
 <ul>
-    <li *ngFor="let item of tasks">
-        {{item}}
+    <li [id]=" 'list-' +item.name"
+        *ngFor="let item of tasks" [innerHtml]="item.name + ' - ' +  item.value ">
     </li>
 </ul>
